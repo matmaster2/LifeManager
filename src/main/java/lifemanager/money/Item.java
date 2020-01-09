@@ -2,7 +2,7 @@ package lifemanager.money;
 
 import java.util.Objects;
 
-public class Item {
+public class Item implements Comparable<Item> {
     private String name;
     private double price;
     private int id;
@@ -61,5 +61,10 @@ public class Item {
                 ", price=" + price +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Item item) {
+        return Integer.compare(this.id, item.id);
     }
 }

@@ -1,8 +1,9 @@
 package lifemanager.money;
 
+import java.util.Collection;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private int id;
     private static int idCount = 0;
@@ -49,5 +50,10 @@ public class Person {
                 "name='" + name + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        return Integer.compare(this.id, person.id);
     }
 }
