@@ -1,6 +1,5 @@
 package lifemanager.money;
 
-import java.util.Collection;
 import java.util.Objects;
 
 public class Person implements Comparable<Person> {

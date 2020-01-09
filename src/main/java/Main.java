@@ -2,8 +2,6 @@ import lifemanager.money.MoneyByPerson;
 import lifemanager.money.Item;
 import lifemanager.money.Person;
 
-import static java.util.Map.Entry.comparingByValue;
-
 public class Main {
     public static void main(String[] args) {
         Person p1 = new Person("Person1");
