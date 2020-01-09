@@ -2,17 +2,21 @@ package lifemanager.money;
 
 public class JobInterface implements Cloneable {
 
-    private static JobInterface instance;
+    private static volatile JobInterface instance;
 
     private JobInterface() {
-        if (instance != null){
+        if (instance != null) {
             throw new IllegalStateException("Cannot create new instance");
         }
     }
 
     public static JobInterface getInstance() {
-        if(instance == null){
-            instance = new JobInterface();
+        if (instance == null) {
+            synchronized (JobInterface.class) {
+                if (instance == null) {
+                    instance = new JobInterface();
+                }
+            }
         }
         return instance;
     }
