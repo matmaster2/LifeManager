@@ -1,3 +1,4 @@
+import lifemanager.money.JobInterface;
 import lifemanager.money.MoneyByPerson;
 import lifemanager.money.Item;
 import lifemanager.money.Person;

@@ -1,29 +1,15 @@
 package lifemanager.money;
 
-public class JobInterface implements Cloneable {
+public class JobInterface {
 
-    private static volatile JobInterface instance;
+    private static class Singleton {
+        private static final JobInterface INSTANCE = new JobInterface();
+    }
 
     private JobInterface() {
-        if (instance != null) {
-            throw new IllegalStateException("Cannot create new instance");
-        }
     }
 
     public static JobInterface getInstance() {
-        if (instance == null) {
-            synchronized (JobInterface.class) {
-                if (instance == null) {
-                    instance = new JobInterface();
-                }
-            }
-        }
-        return instance;
+        return Singleton.INSTANCE;
     }
-
-    @Override
-    protected JobInterface clone() throws CloneNotSupportedException {
-        return getInstance();
-    }
-
 }
