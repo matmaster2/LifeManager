@@ -1,10 +1,8 @@
-import com.sun.source.tree.Tree;
 import lifemanager.money.*;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-// A poza tym uważam, że unia europejska powinna zostać zniszczona
 public class Main {
     public static void main(String[] args) {
         Person p1 = new Person("Person1");
