@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Item implements Comparable<Item> {
     private String name;
     private double price;
-    private int id;
+    private final int id;
     private static int idCount;
 
     public Item(String name, double price) {

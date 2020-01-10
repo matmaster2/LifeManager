@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Person implements Comparable<Person> {
     private String name;
-    private int id;
+    private final int id;
     private static int idCount = 0;
 
     public Person(String name) {

@@ -32,7 +32,7 @@ public class MoneyByPerson implements IMapItemAndPerson {
         addPerson(person, 0.0);
     }
 
-    public void addPerson(Person person, Double amount) {
+    public void addPerson(Person person, Double amount) throws IllegalArgumentException {
         if (person != null && amount != null && sumAmount() + amount <= this.item.getPrice()) {
             this.listPersonWithAmount.put(person, amount);
         } else {

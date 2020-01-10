@@ -1,4 +1,15 @@
 package lifemanager.money;
 
-public interface IMapItemAndPerson extends IItemAndPerson, IPersonOperation {
+import java.util.Map;
+
+public interface IMapItemAndPerson {
+    Item getItem();
+
+    Map<Person, Double> getListPersonWithAmount();
+
+    double sumAmount();
+
+    void addPerson(Person person);
+
+    void delPerson(Person person);
 }
