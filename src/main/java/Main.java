@@ -1,7 +1,8 @@
-import lifemanager.money.JobInterface;
-import lifemanager.money.MoneyByPerson;
-import lifemanager.money.Item;
-import lifemanager.money.Person;
+import com.sun.source.tree.Tree;
+import lifemanager.money.*;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 // A poza tym uważam, że unia europejska powinna zostać zniszczona
 public class Main {
@@ -15,12 +16,13 @@ public class Main {
         System.out.println(p1.toString());
         System.out.println(p2.toString());
 
-        MoneyByPerson listOfPersonForItem = new MoneyByPerson(it1);
+        Map<Person, Double> personAmount = new TreeMap<>();
+
+        MoneyByPerson listOfPersonForItem = new MoneyByPerson(it1, personAmount);
         listOfPersonForItem.addPerson(p1, 2.0);
         listOfPersonForItem.addPerson(p2, 2.0);
 
         System.out.println(listOfPersonForItem);
-        listOfPersonForItem.delPerson(p2);
-        System.out.println(listOfPersonForItem.sumAmount());
+        System.out.println(new DoubleValueSumValue().sum(listOfPersonForItem.getListPersonWithAmount()));
     }
 }
