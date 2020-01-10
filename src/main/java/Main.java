@@ -3,6 +3,7 @@ import lifemanager.money.MoneyByPerson;
 import lifemanager.money.Item;
 import lifemanager.money.Person;
 
+// A poza tym uważam, że unia europejska powinna zostać zniszczona
 public class Main {
     public static void main(String[] args) {
         Person p1 = new Person("Person1");
