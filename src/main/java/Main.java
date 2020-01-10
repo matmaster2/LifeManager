@@ -14,9 +14,7 @@ public class Main {
         System.out.println(p1.toString());
         System.out.println(p2.toString());
 
-        Map<Person, Double> personAmount = new TreeMap<>();
-
-        MoneyByPerson listOfPersonForItem = new MoneyByPerson(it1, personAmount);
+        MoneyByPerson listOfPersonForItem = new MoneyByPerson(it1);
         listOfPersonForItem.addPerson(p1, 2.0);
         listOfPersonForItem.addPerson(p2, 2.0);
 
