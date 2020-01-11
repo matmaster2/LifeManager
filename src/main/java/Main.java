@@ -20,7 +20,6 @@ public class Main {
 
         System.out.println(listOfPersonForItem);
         listOfPersonForItem.delPerson(p2);
-        System.out.println(listOfPersonForItem.sumAmount());
 
         System.out.println("-------------------------------------------");
         PersonsAndItemsLinkManager a = new PersonsAndItemsLinkManager();
@@ -38,7 +37,6 @@ public class Main {
         a.showPersons();
 
         MoneyByPerson b = a.linkPersonsToItem(1, new int[]{2, 3});
-        System.out.println(b.sumAmount());
         System.out.println(b);
 
 
