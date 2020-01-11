@@ -1,7 +1,7 @@
-import lifemanager.money.*;
-
-import java.util.Map;
-import java.util.TreeMap;
+import lifemanager.money.Item;
+import lifemanager.money.MoneyByPerson;
+import lifemanager.money.Person;
+import lifemanager.money.PersonsAndItemsLinkManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +19,28 @@ public class Main {
         listOfPersonForItem.addPerson(p2, 2.0);
 
         System.out.println(listOfPersonForItem);
-        System.out.println(new DoubleValueSumValue().sum(listOfPersonForItem.getListPersonWithAmount()));
+        listOfPersonForItem.delPerson(p2);
+        System.out.println(listOfPersonForItem.sumAmount());
+
+        System.out.println("-------------------------------------------");
+        PersonsAndItemsLinkManager a = new PersonsAndItemsLinkManager();
+        a.addPerson("Person 3");
+        a.addPerson("Person 4");
+        a.addPerson("Person 5");
+        a.addPerson("Person 6");
+
+
+        a.addItem("Item 3", 2.3);
+        a.addItem("Item 4", 2.3);
+
+
+        a.showItems();
+        a.showPersons();
+
+        MoneyByPerson b = a.linkPersonsToItem(1, new int[]{2, 3});
+        System.out.println(b.sumAmount());
+        System.out.println(b);
+
+
     }
 }
