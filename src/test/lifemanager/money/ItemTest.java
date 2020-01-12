@@ -58,9 +58,11 @@ public class ItemTest {
     @Test
     public void getIdCount() {
         Item it1 = new Item("TEST", 0.0);
-        Item it2 = new Item("TEST", 0.0);
+        assertEquals(1, Item.getIdCount());
 
+        Item it2 = new Item("TEST", 0.0);
         assertEquals(2, Item.getIdCount());
+
     }
 
     @Test
