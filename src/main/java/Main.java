@@ -3,6 +3,9 @@ import lifemanager.money.MoneyByPerson;
 import lifemanager.money.Person;
 import lifemanager.money.PersonsAndItemsLinkManager;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
         Person p1 = new Person("Person1");
@@ -14,6 +17,7 @@ public class Main {
         System.out.println(p1.toString());
         System.out.println(p2.toString());
 
+        Set<Person> aaa = new HashSet<>();
         MoneyByPerson listOfPersonForItem = new MoneyByPerson(it1);
         listOfPersonForItem.addPerson(p1, 2.0);
         listOfPersonForItem.addPerson(p2, 2.0);

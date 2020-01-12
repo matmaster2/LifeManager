@@ -9,8 +9,8 @@ public class Item implements Comparable<Item> {
     private static int idCount;
 
     public Item(String name, double price) {
+        this.setPrice(price);
         this.name = name;
-        this.price = price;
         this.id = idCount;
         idCount++;
     }
@@ -36,6 +36,9 @@ public class Item implements Comparable<Item> {
     }
 
     public void setPrice(double price) {
+        if (price < 0.0) {
+            throw new IllegalArgumentException("Price argument must be >= 0.0");
+        }
         this.price = price;
     }
 
