@@ -37,6 +37,7 @@ public class ItemTest {
         assertNull(it2.getName());
     }
 
+    @Test
     public void getId() {
         Item it1 = new Item("TEST", 0.0);
         assertEquals(0, it1.getId());
@@ -81,5 +82,53 @@ public class ItemTest {
         Item it1 = new Item("TEST", 0.0);
         it1.setPrice(-1.0);
         assertEquals(Double.valueOf(-1.0), Double.valueOf(it1.getPrice()));
+    }
+
+    @Test
+    public void equalsFalse() {
+        Item it1 = new Item("TEST", 0.0);
+        Item it2 = new Item("TEST", 0.0);
+
+        assertNotEquals(it1, it2);
+    }
+
+    @Test
+    public void hashCodeDifferentObject() {
+        Item it1 = new Item("TEST", 0.0);
+        Item it2 = new Item("TEST", 0.0);
+
+        assertNotEquals(it1.hashCode(), it2.hashCode());
+    }
+
+    @Test
+    public void hashCodeSameObject() {
+        Item it1 = new Item("TEST", 0.0);
+
+        assertEquals(it1.hashCode(), it1.hashCode());
+    }
+
+    @Test
+    public void compareIdOrder() {
+        Item it1 = new Item("TEST", 0.0);
+        Item it2 = new Item("TEST", 0.0);
+
+        assertEquals(-1, it1.compareTo(it2));
+        assertEquals(1, it2.compareTo(it1));
+    }
+
+    @Test
+    public void toStringCheck() {
+        Item it1 = new Item("TEST1", 0.0);
+        Item it2 = new Item("TEST1", 2.0);
+
+        assertEquals("Item{name='TEST1', price=0.0, id=0}", it1.toString());
+        assertEquals("Item{name='TEST1', price=2.0, id=1}", it2.toString());
+    }
+
+    @Test
+    public void toStringCheckNullName() {
+        Item it1 = new Item(null, 0.0);
+
+        assertEquals("Item{name='null', price=0.0, id=0}", it1.toString());
     }
 }
