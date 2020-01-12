@@ -28,11 +28,14 @@ public class PersonTest {
     }
 
     @Test
-    public void getIdCountFor3Instances() {
+    public void getIdCountForInstances() {
         Person p1 = new Person("TEST");
-        Person p2 = new Person("TEST");
-        Person p3 = new Person("TEST");
+        assertEquals(1, Person.getIdCount());
 
+        Person p2 = new Person("TEST");
+        assertEquals(2, Person.getIdCount());
+
+        Person p3 = new Person("TEST");
         assertEquals(3, Person.getIdCount());
     }
 
