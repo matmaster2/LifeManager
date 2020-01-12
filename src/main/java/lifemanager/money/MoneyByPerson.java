@@ -3,7 +3,7 @@ package lifemanager.money;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MoneyByPerson implements IMapItemAndPerson {
+public class MoneyByPerson implements MapItemAndPerson {
     private final Item item;
     private Map<Person, Double> listPersonWithAmount = new TreeMap<>();
 
@@ -24,7 +24,7 @@ public class MoneyByPerson implements IMapItemAndPerson {
     }
 
     public void addPerson(Person person, Double amount) {
-        ISumValue sumAmount = new DoubleValueSumValue();
+        SumValue sumAmount = new DoubleValueSumValue();
         if (person != null && amount != null && amount >= 0.0 && sumAmount.sum(listPersonWithAmount) + amount <= this.item.getPrice()) {
             this.listPersonWithAmount.put(person, amount);
         } else {
