@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Place {
 
-    private String name;
+    private final String name;
     private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Person> persons;
 
@@ -14,7 +14,7 @@ public class Place {
         this.persons = (ArrayList<Person>) persons;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -22,34 +22,40 @@ public class Place {
         persons.add(person);
     }
 
-    public void delPerson(Person person) {
-        persons.remove(person);
+    public void delPerson(Integer id) {
+        persons.remove(persons.get(id));
     }
 
     public void addItem(Item item) {
         items.add(item);
     }
 
-    public void delItem(Item item){
-        items.remove(item);
+    public void addItems(List<Item> itemList) {
+        items.addAll(itemList);
+    }
+
+    public void delItem(Integer id) {
+        items.remove(items.get(id));
     }
 
     public Person getPerson(Integer id) {
-        if (persons.get(id) == null) {
-            throw new IndexOutOfBoundsException("Person with this id do not exist");
-        } else {
-            System.out.println(persons.get(id));
-            return persons.get(id);
+        for (Person person : persons) {
+            if (person.getId() == id) {
+                System.out.println(person);
+                return person;
+            }
         }
+        throw new IllegalArgumentException("Person with this id do not exist");
     }
 
     public Item getItem(Integer id) {
-        if (items.get(id) == null) {
-            throw new IndexOutOfBoundsException("Item with this id do not exist");
-        } else {
-            System.out.println(items.get(id));
-            return items.get(id);
+        for (Item item : items) {
+            if (item.getId() == id) {
+                System.out.println(item);
+                return item;
+            }
         }
+        throw new IllegalArgumentException("Item with this id do not exist");
     }
 
     public void showItems() {
@@ -64,6 +70,15 @@ public class Place {
         for (Person person : persons) {
             System.out.println(person);
         }
+    }
+
+    public String toString() {
+        return "Place{" +
+                "name=" + name + ",\n" +
+                "List of items:\n" + items.toString() + ",\n" +
+                "List of persons:\n" + persons.toString() + "\n" +
+                '}';
+
     }
 
 
