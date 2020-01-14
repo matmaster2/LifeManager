@@ -30,20 +30,6 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id == person.id &&
-                Objects.equals(name, person.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, id);
-    }
-
-    @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
@@ -54,5 +40,18 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person person) {
         return Integer.compare(this.id, person.id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
