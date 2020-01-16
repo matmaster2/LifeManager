@@ -5,24 +5,36 @@ import java.util.List;
 
 public class Place {
 
-    private final String name;
-    private ArrayList<Item> items = new ArrayList<>();
-    private ArrayList<Person> persons;
+    private String name;
+    private List<Item> items = new ArrayList<>();
+    private List<Person> persons;
+    private final int id;
+    private static int idCount = 0;
 
     public Place(String name, List<Person> persons) {
         this.name = name;
-        this.persons = (ArrayList<Person>) persons;
+        this.persons = persons;
+        this.id = idCount;
+        idCount++;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void addPerson(Person person) {
         persons.add(person);
     }
 
-    public void delPerson(Integer id) {
+    public void delPerson(int id) {
         persons.remove(persons.get(id));
     }
 
@@ -34,28 +46,16 @@ public class Place {
         items.addAll(itemList);
     }
 
-    public void delItem(Integer id) {
+    public void delItem(int id) {
         items.remove(items.get(id));
     }
 
-    public Person getPerson(Integer id) {
-        for (Person person : persons) {
-            if (person.getId() == id) {
-                System.out.println(person);
-                return person;
-            }
-        }
-        throw new IllegalArgumentException("Person with this id do not exist");
+    public Person getPerson(int id) {
+        return persons.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
-    public Item getItem(Integer id) {
-        for (Item item : items) {
-            if (item.getId() == id) {
-                System.out.println(item);
-                return item;
-            }
-        }
-        throw new IllegalArgumentException("Item with this id do not exist");
+    public Item getItem(int id) {
+        return items.stream().filter(item -> item.getId() == id).findAny().orElse(null);
     }
 
     public void showItems() {
