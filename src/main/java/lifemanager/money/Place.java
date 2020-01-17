@@ -6,7 +6,7 @@ import java.util.List;
 public class Place {
 
     private String name;
-    private List<Item> items = new ArrayList<>();
+    private List<MapItemAndPerson> items = new ArrayList<>();
     private List<Person> persons;
     private final int id;
     private static int idCount = 0;
@@ -38,12 +38,8 @@ public class Place {
         persons.remove(persons.get(id));
     }
 
-    public void addItem(Item item) {
-        items.add(item);
-    }
-
-    public void addItems(List<Item> itemList) {
-        items.addAll(itemList);
+    public void addItem(MapItemAndPerson pack) {
+        items.add(pack);
     }
 
     public void delItem(int id) {
@@ -75,8 +71,8 @@ public class Place {
     public String toString() {
         return "Place{" +
                 "name=" + name + ",\n" +
-                "List of items:\n" + items.toString() + ",\n" +
-                "List of persons:\n" + persons.toString() + "\n" +
+                "List of items:\n" + items + ",\n" +
+                "List of persons:\n" + persons + "\n" +
                 '}';
 
     }
