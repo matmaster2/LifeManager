@@ -1,10 +1,8 @@
-import lifemanager.money.Item;
-import lifemanager.money.MoneyByPerson;
-import lifemanager.money.Person;
-import lifemanager.money.Place;
+import lifemanager.money.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 
@@ -31,23 +29,23 @@ public class Main {
         System.out.println("-------------------------------------------");*/
 
 
-        Place kebab = new Place("Kebab", new ArrayList<>(asList(new Person("Person 1"), new Person("Person 2"))));
-        kebab.addItem(new Item("Na cienkim", 12.4));
-        kebab.addItem(new Item("tortilla", 20.0));
-        kebab.addItems(new ArrayList<>(asList(new Item("Mleko", 5.6), new Item("Podwojne frytasy", 11.2))));
+        List<Person> personList = new ArrayList<>(asList(new Person("Person 1"), new Person("Person 2")));
+
+        Place kebab = new Place("Kebab", personList);
+
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(new Item("Na cienkim", 12.4));
+        itemList.add(new Item("tortilla", 20.0));
+        MapItemAndPerson newItem = new MoneyByPerson(itemList.get(0));
+        newItem.addPerson(personList.get(0), 4.0);
+
+        kebab.addItem(newItem);
+        kebab.addItem(new MoneyByPerson(itemList.get(1)));
 
         System.out.println(kebab);
         System.out.println("-----");
-        kebab.getItem(0);
 
-        MoneyByPerson money = new MoneyByPerson(kebab.getItem(0));
-        System.out.println("-----------------------------");
-        System.out.println(money);
-        System.out.println("-----------------------------");
-        money.addPerson(kebab.getPerson(0),10.0);
-        money.addPerson(new Person("NjuPerson"),2.4);
-        System.out.println(money);
-
+        System.out.println(kebab.getItem(0));
 
 
     }

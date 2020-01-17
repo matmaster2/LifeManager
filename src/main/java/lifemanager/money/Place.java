@@ -47,25 +47,18 @@ public class Place {
     }
 
     public Person getPerson(int id) {
-        return persons.stream().filter(person -> person.getId() == id).findAny().orElse(null);
+        return persons.stream()
+                      .filter(person -> person.getId() == id)
+                      .findAny()
+                      .orElse(null);
     }
 
-    public Item getItem(int id) {
-        return items.stream().filter(item -> item.getId() == id).findAny().orElse(null);
-    }
-
-    public void showItems() {
-        System.out.println("List of items:");
-        for (Item item : items) {
-            System.out.println(item);
-        }
-    }
-
-    public void showPersons() {
-        System.out.println("List of persons:");
-        for (Person person : persons) {
-            System.out.println(person);
-        }
+    public MapItemAndPerson getItem(int id) {
+        return items.stream()
+                    .filter(item -> item.getItem()
+                                        .getId() == id)
+                    .findAny()
+                    .orElse(null);
     }
 
     public String toString() {
