@@ -63,7 +63,7 @@ public class Place {
 
     public List<Item> getItems() {
         return items.stream()
-                    .map(item -> item.getItem())
+                    .map(GetItemAndPerson::getItem)
                     .collect(Collectors.toList());
 
     }

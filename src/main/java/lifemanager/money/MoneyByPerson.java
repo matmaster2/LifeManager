@@ -11,18 +11,17 @@ public class MoneyByPerson implements MapItemAndPerson {
         this.item = item;
     }
 
+    @Override
     public Item getItem() {
         return item;
     }
 
+    @Override
     public Map<Person, Double> getListPersonWithAmount() {
         return listPersonWithAmount;
     }
 
-    public void addPerson(Person person) {
-        addPerson(person, 0.0);
-    }
-
+    @Override
     public void addPerson(Person person, Double amount) {
         SumValue sumAmount = new DoubleValueSumValue();
         if (person != null && amount != null && amount >= 0.0 && sumAmount.sum(listPersonWithAmount) + amount <= this.item.getPrice()) {
@@ -32,6 +31,7 @@ public class MoneyByPerson implements MapItemAndPerson {
         }
     }
 
+    @Override
     public void delPerson(Person person) {
         listPersonWithAmount.remove(person);
     }
