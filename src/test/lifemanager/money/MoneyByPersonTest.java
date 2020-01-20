@@ -1,5 +1,7 @@
 package lifemanager.money;
 
+import lifemanager.money.model.Item;
+import lifemanager.money.model.Person;
 import org.junit.*;
 
 import java.util.Map;

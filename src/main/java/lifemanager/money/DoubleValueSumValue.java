@@ -1,5 +1,7 @@
 package lifemanager.money;
 
+import lifemanager.money.model.Person;
+
 import java.util.Map;
 
 public class DoubleValueSumValue implements SumValue {

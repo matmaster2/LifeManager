@@ -1,5 +1,6 @@
 package lifemanager.money;
 
+import lifemanager.money.model.Item;
 import org.junit.*;
 
 import java.lang.reflect.Field;

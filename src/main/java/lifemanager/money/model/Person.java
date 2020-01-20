@@ -1,4 +1,4 @@
-package lifemanager.money;
+package lifemanager.money.model;
 
 import java.util.Objects;
 
