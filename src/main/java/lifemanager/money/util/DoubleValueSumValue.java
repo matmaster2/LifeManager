@@ -1,4 +1,4 @@
-package lifemanager.money;
+package lifemanager.money.util;
 
 import lifemanager.money.model.Person;
 

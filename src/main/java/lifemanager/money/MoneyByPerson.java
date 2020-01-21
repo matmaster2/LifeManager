@@ -2,6 +2,8 @@ package lifemanager.money;
 
 import lifemanager.money.model.Item;
 import lifemanager.money.model.Person;
+import lifemanager.money.util.DoubleValueSumValue;
+import lifemanager.money.util.SumValue;
 
 import java.util.Map;
 import java.util.TreeMap;
