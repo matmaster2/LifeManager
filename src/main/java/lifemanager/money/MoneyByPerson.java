@@ -5,12 +5,11 @@ import lifemanager.money.model.Person;
 import lifemanager.money.util.DoubleValueSumValue;
 import lifemanager.money.util.SumValue;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MoneyByPerson implements MapItemAndPerson {
     private final Item item;
-    private Map<Person, Double> listPersonWithAmount = new TreeMap<>();
+    private final Map<Person, Double> listPersonWithAmount = new TreeMap<>();
 
     public MoneyByPerson(Item item) {
         this.item = item;

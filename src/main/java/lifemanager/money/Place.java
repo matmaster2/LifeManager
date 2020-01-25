@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 public class Place {
 
     private String name;
-    private List<MapItemAndPerson> items = new ArrayList<>();
-    private List<Person> persons;
+    private final List<MapItemAndPerson> items = new ArrayList<>();
+    private final List<Person> persons;
     private final int id;
     private static int idCount = 0;
 

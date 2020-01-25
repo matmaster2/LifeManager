@@ -49,6 +49,5 @@ public class Main {
         System.out.println(kebab.getItem(0));
         System.out.println(kebab.getItems());
 
-
     }
 }
