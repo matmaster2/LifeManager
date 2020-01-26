@@ -47,9 +47,7 @@ public class Place {
         items.remove(items.get(id));
     }
 
-    public List<Person> getPersons() {
-        return persons;
-    }
+    public List<Person> getPersons() { return persons; }
 
     public MapItemAndPerson getItem(int id) {
         return items.stream()

@@ -25,7 +25,7 @@ public class MoneyByPerson implements MapItemAndPerson {
 
     @Override
     public void addPerson(Person person, Double amount) {
-            this.listPersonWithAmount.put(person, amount);
+        this.listPersonWithAmount.put(person, amount);
     }
 
     @Override
