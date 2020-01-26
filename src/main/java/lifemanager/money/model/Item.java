@@ -6,13 +6,11 @@ public class Item implements Comparable<Item> {
     private String name;
     private double price;
     private final int id;
-    private static int idCount;
 
-    public Item(String name, double price) {
+    public Item(int id, String name, double price) {
         this.setPrice(price);
         this.name = name;
-        this.id = idCount;
-        idCount++;
+        this.id = id;
     }
 
     public String getName() {
@@ -25,10 +23,6 @@ public class Item implements Comparable<Item> {
 
     public double getPrice() {
         return price;
-    }
-
-    public static int getIdCount() {
-        return idCount;
     }
 
     public void setName(String name) {

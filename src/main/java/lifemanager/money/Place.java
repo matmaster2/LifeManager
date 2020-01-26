@@ -12,13 +12,11 @@ public class Place {
     private final List<MapItemAndPerson> items = new ArrayList<>();
     private final List<Person> persons;
     private final int id;
-    private static int idCount = 0;
 
-    public Place(String name, List<Person> persons) {
+    public Place(int id, String name, List<Person> persons) {
         this.name = name;
         this.persons = persons;
-        this.id = idCount;
-        idCount++;
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -49,11 +47,8 @@ public class Place {
         items.remove(items.get(id));
     }
 
-    public Person getPerson(int id) {
-        return persons.stream()
-                      .filter(person -> person.getId() == id)
-                      .findAny()
-                      .orElse(null);
+    public List<Person> getPersons() {
+        return persons;
     }
 
     public MapItemAndPerson getItem(int id) {
@@ -74,6 +69,7 @@ public class Place {
     public String toString() {
         return "Place{" +
                 "name=" + name + ",\n" +
+                "id=" + id + ",\n" +
                 "List of items:\n" + items + ",\n" +
                 "List of persons:\n" + persons + "\n" +
                 '}';

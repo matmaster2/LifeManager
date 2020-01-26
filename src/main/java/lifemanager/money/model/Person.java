@@ -5,16 +5,10 @@ import java.util.Objects;
 public class Person implements Comparable<Person> {
     private String name;
     private final int id;
-    private static int idCount = 0;
 
-    public Person(String name) {
+    public Person(int id, String name) {
         this.name = name;
-        this.id = idCount;
-        idCount++;
-    }
-
-    public static int getIdCount() {
-        return idCount;
+        this.id = id;
     }
 
     public String getName() {
